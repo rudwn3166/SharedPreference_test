@@ -21,6 +21,13 @@ class ContextUtils {
 //    자동로그인 상태 저장
             pref.edit().putBoolean(AUTO_LOGIN,autoLogin).apply()
 
+        }
+
+//        메모장 열고 값이 필요없어서 컨텍스트만 넣음,단 결과 값이 뭐로 내보내야 하는지 확인 해야함
+        fun getAutoLogin(context: Context) : Boolean{
+
+    val pref = context.getSharedPreferences(prefName,Context.MODE_PRIVATE)
+    return pref.getBoolean(AUTO_LOGIN,false)
 
         }
     }
